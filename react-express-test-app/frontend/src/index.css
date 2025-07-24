@@ -16,3 +16,17 @@ body {
   padding: 0;
   min-height: 100vh;
 }
+
+h1 {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: large;
+}

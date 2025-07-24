@@ -1,6 +1,14 @@
-const express = require("express");
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import testCorsRouter from "./routes/test-cors.js";
+
+dotenv.config();
 
 const app = express();
+
+app.use(cors({ origin: process.env.CLIENT_ORIGIN }));
+app.use("/test-cors", testCorsRouter);
 
 app.get("/", (req, res) => {
   res.status(200).send("hello, express");

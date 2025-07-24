@@ -5,7 +5,9 @@ export default function App() {
   return (
     <>
       <Header />
-      <Outlet />
+      <main className="p-10">
+        <Outlet />
+      </main>
     </>
   );
 }
