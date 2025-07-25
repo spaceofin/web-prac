@@ -1,13 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
-import cors from "cors";
+// import cors from "cors";
+import { corsMiddleware } from "./middlewares/corsMiddleware.js";
 import testCorsRouter from "./routes/test-cors.js";
 
 dotenv.config();
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN }));
+// app.use(cors({ origin: process.env.CLIENT_ORIGIN }));
+app.use(corsMiddleware);
 app.use("/test-cors", testCorsRouter);
 
 app.get("/", (req, res) => {
